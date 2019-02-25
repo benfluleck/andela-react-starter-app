@@ -1,13 +1,20 @@
 import React, { Fragment } from 'react'
 import { render } from 'react-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 
-import './index.css'
+import GlobalStyle from '<styles>/global'
+import BaseRoute from '<pages>/index.jsx'
+import ThemeWrapper from '<styles>/ThemeWrapper/ThemeWrapper'
 
 const App = () => (
-  <Fragment>
-    <h1 className="hello__message">Hello World </h1>
-  </Fragment>
-
+  <ThemeWrapper>
+    <Fragment>
+      <GlobalStyle />
+      <Router>
+        <BaseRoute />
+      </Router>
+    </Fragment>
+  </ThemeWrapper>
 )
 
 export default App

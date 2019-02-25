@@ -15,7 +15,7 @@ module.exports = {
       '<molecules>': path.resolve(__dirname, 'client/src/components/UI/molecules'),
       '<organisms>': path.resolve(__dirname, 'client/src/components/UI/organisms'),
       '<styles>': path.resolve(__dirname, 'client/src/styles'),
-      '<core>': path.resolve(__dirname, 'client/src/core'),
+      '<pages>': path.resolve(__dirname, 'client/src/components/pages'),
       '<helpers>': path.resolve(__dirname, 'client/src/helpers')
     }
   },
@@ -38,6 +38,7 @@ module.exports = {
             plugins: [
               '@babel/plugin-proposal-object-rest-spread',
               '@babel/plugin-proposal-class-properties',
+              '@babel/plugin-transform-runtime',
               '@babel/plugin-transform-arrow-functions'
             ]
           }
