@@ -1,25 +1,24 @@
 import React from 'react'
-import axios from 'axios'
-
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-class HomePage extends React.Component {
-  constructor (props) {
-    super(props)
+const HomePage = ({ name }) => (
+  <HomePage.Container>
+    {name}
+  </HomePage.Container>
+)
 
-    this.getAllCharacters = () => {
-      return axios.get('https://rickandmortyapi.com/api/character/?page=2')
-    }
-  }
-  render () {
-    const result = async () => {
-      const result = await this.getAllCharacters()
-      console.log(result)
-    }
-    console.log(result())
-
-    return (<h1>This is the HomePage</h1>)
-  }
+HomePage.defaultProps = {
+  name: 'Test Prop Name'
 }
+
+HomePage.propTypes = {
+  name: PropTypes.string.isRequired
+}
+
+HomePage.Container = styled.div`
+  font-size: ${props => props.theme.fontSize.md};
+
+`
 
 export default HomePage
